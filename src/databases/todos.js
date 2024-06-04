@@ -34,4 +34,14 @@ const deleteTodo = (id) => {
     return todos
 }
 
-export { getTodos, setTodoStatus, deleteTodo }
+const addTodo = (title) => {
+    todos = todos.concat({
+        id: todos.length + 1,
+        title: title,
+        completed: false
+    })
+
+    return todos
+}
+
+export { getTodos, setTodoStatus, deleteTodo, addTodo }

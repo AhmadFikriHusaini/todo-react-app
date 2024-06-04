@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { deleteTodo, getTodos, setTodoStatus } from "./databases/todos";
+import {
+  addTodo,
+  deleteTodo,
+  getTodos,
+  setTodoStatus,
+} from "./databases/todos";
 import Todos from "./components/Todos";
+import TodoForm from "./components/TodoForm";
 
 function App() {
   const [todos, setTodos] = useState(getTodos());
@@ -13,8 +19,13 @@ function App() {
     setTodos(deleteTodo(id));
   };
 
+  const handleAdd = (title) => {
+    setTodos(addTodo(title));
+  };
+
   return (
     <>
+      <TodoForm handleAdd={handleAdd} />
       <Todos
         todos={todos}
         handleStatus={handleStatus}
