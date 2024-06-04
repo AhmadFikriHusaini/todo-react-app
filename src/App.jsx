@@ -6,8 +6,7 @@ function App() {
   const [todos, setTodos] = useState(getTodos());
 
   const handleStatus = (id) => {
-    console.log(id);
-    // setTodos(setTodoStatus(id));
+    setTodos(setTodoStatus(id));
   };
   return (
     <>

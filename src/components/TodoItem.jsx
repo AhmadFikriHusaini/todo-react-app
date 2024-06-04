@@ -8,7 +8,7 @@ const TodoItem = ({ item, handleStatus }) => {
           <p>{item.title}</p>
         )}
         <button>Delete</button>
-        <button onClick={handleStatus(item.id)}>Check</button>
+        <button onClick={() => handleStatus(item.id)}>Check</button>
       </div>
     </>
   );
