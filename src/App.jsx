@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getTodos, setTodoStatus } from "./databases/todos";
+import { deleteTodo, getTodos, setTodoStatus } from "./databases/todos";
 import Todos from "./components/Todos";
 
 function App() {
@@ -8,9 +8,18 @@ function App() {
   const handleStatus = (id) => {
     setTodos(setTodoStatus(id));
   };
+
+  const handleDelete = (id) => {
+    setTodos(deleteTodo(id));
+  };
+
   return (
     <>
-      <Todos todos={todos} handleStatus={handleStatus} />
+      <Todos
+        todos={todos}
+        handleStatus={handleStatus}
+        handleDelete={handleDelete}
+      />
     </>
   );
 }

@@ -1,4 +1,4 @@
-const TodoItem = ({ item, handleStatus }) => {
+const TodoItem = ({ item, handleStatus, handleDelete }) => {
   return (
     <>
       <div className="flex">
@@ -7,7 +7,13 @@ const TodoItem = ({ item, handleStatus }) => {
         ) : (
           <p>{item.title}</p>
         )}
-        <button>Delete</button>
+        <button
+          onClick={() => {
+            handleDelete(item.id);
+          }}
+        >
+          Delete
+        </button>
         <button onClick={() => handleStatus(item.id)}>Check</button>
       </div>
     </>

@@ -1,4 +1,4 @@
-const todos = [
+let todos = [
     {
         id: 1,
         title: 'Finish Progate React Course',
@@ -21,7 +21,7 @@ const getTodos = () => {
 }
 
 const setTodoStatus = (id) => {
-    return todos.map((todo) => {
+    return todos = todos.map((todo) => {
         if (todo.id === id) {
             todo.completed = !todo.completed
         }
@@ -29,4 +29,9 @@ const setTodoStatus = (id) => {
     })
 }
 
-export { getTodos, setTodoStatus }
+const deleteTodo = (id) => {
+    todos = todos.filter((todo) => todo.id !== id)
+    return todos
+}
+
+export { getTodos, setTodoStatus, deleteTodo }
