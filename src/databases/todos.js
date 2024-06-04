@@ -20,4 +20,8 @@ const getTodos = () => {
     return todos
 }
 
-export { getTodos }
+const setTodoStatus = (id) => {
+    return id
+}
+
+export { getTodos, setTodoStatus }
