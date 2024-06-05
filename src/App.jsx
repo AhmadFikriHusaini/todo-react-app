@@ -24,14 +24,17 @@ function App() {
   };
 
   return (
-    <>
-      <TodoForm handleAdd={handleAdd} />
-      <Todos
-        todos={todos}
-        handleStatus={handleStatus}
-        handleDelete={handleDelete}
-      />
-    </>
+    <div className="h-screen w-2/3 m-auto">
+      <div className="card m-12 items-center">
+        <p className="text-3xl font-bold m-6">Todo App</p>
+        <TodoForm handleAdd={handleAdd} />
+        <Todos
+          todos={todos}
+          handleStatus={handleStatus}
+          handleDelete={handleDelete}
+        />
+      </div>
+    </div>
   );
 }
 
