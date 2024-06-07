@@ -3,12 +3,10 @@ const TodoItem = ({ item, handleStatus }) => {
     <>
       <div className="flex">
         {item.completed ? (
-          <p className="line-through">{item.title}</p>
+          <p className="line-through text-sm">{item.title}</p>
         ) : (
-          <p>{item.title}</p>
+          <p className="text-sm">{item.title}</p>
         )}
-        <button>Delete</button>
-        <button onClick={handleStatus(item.id)}>Check</button>
       </div>
     </>
   );

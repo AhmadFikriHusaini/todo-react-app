@@ -10,9 +10,12 @@ function App() {
     // setTodos(setTodoStatus(id));
   };
   return (
-    <>
-      <Todos todos={todos} handleStatus={handleStatus} />
-    </>
+    <div className="h-screen w-2/3 m-auto">
+      <div className="card m-12 items-center">
+        <p className="text-3xl font-bold m-6">TODO APP</p>
+        <Todos todos={todos} handleStatus={handleStatus} />
+      </div>
+    </div>
   );
 }
 
