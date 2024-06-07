@@ -1,17 +1,10 @@
 import TodoItem from "./TodoItem";
 
-const Todos = ({ todos, handleStatus, handleDelete }) => {
+const Todos = ({ todos }) => {
   return (
     <>
       {todos.map((todo) => {
-        return (
-          <TodoItem
-            item={todo}
-            key={todo.id}
-            handleStatus={handleStatus}
-            handleDelete={handleDelete}
-          />
-        );
+        return <TodoItem item={todo} key={todo.id} />;
       })}
     </>
   );

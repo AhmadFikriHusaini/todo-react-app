@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TodoContext } from "./TodoContext";
 
-const TodoItem = ({ item, handleStatus, handleDelete }) => {
+const TodoItem = ({ item }) => {
   const [hidden, setHidden] = useState(true);
+
+  const context = useContext(TodoContext);
 
   return (
     <>
       <div
-        className={`flex items-center ${
+        className={`flex cursor-pointer items-center ${
           hidden ? `justify-center` : `justify-between`
-        } w-1/3 my-2 min-h-14`}
+        } my-2 min-h-14`}
         onMouseEnter={() => {
           setHidden(false);
         }}
@@ -26,24 +29,24 @@ const TodoItem = ({ item, handleStatus, handleDelete }) => {
             {item.completed ? (
               <button
                 className="btn btn-success mx-2 cursor-pointer"
-                onClick={() => handleStatus(item.id)}
+                onClick={() => context.handleStatus(item.id)}
               >
-                Check
+                Batal
               </button>
             ) : (
               <button
                 className="btn btn-outline btn-success mx-2 cursor-pointer"
                 onClick={() => {
-                  handleStatus(item.id);
+                  context.handleStatus(item.id);
                 }}
               >
-                Check
+                Selesai
               </button>
             )}
             <button
               className="btn btn-error p-4 cursor-pointer"
               onClick={() => {
-                handleDelete(item.id);
+                context.handleDelete(item.id);
               }}
             >
               X

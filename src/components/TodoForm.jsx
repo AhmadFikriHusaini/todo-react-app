@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TodoContext } from "./TodoContext";
 
-const TodoForm = ({ handleAdd }) => {
+const TodoForm = () => {
   const [title, setTitle] = useState("");
+
+  const context = useContext(TodoContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleAdd(title);
+    context.handleAdd(title);
     setTitle("");
   };
 

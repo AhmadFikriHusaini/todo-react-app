@@ -21,12 +21,13 @@ const getTodos = () => {
 }
 
 const setTodoStatus = (id) => {
-    return todos = todos.map((todo) => {
+    todos = todos.map((todo) => {
         if (todo.id === id) {
             todo.completed = !todo.completed
         }
         return todo
     })
+    return todos
 }
 
 const deleteTodo = (id) => {
